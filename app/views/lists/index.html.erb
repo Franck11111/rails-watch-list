@@ -1,0 +1,22 @@
+<h1>Save any kind of movies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>My lists</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lists.each do |list| %>
+      <tr>
+        <td><strong><%= link_to list.name, list_path(list)%></strong></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add a new list', new_list_path %>
