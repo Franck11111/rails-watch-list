@@ -30,8 +30,4 @@ movie['results'].each do |movie|
   Movie.create!(title: movie['title'], overview: movie['overview'], rating: movie['vote_average'])
 end
 
-puts "Creating lists..."
-List.create(name: "Favourites")
-List.create(name: "Do not watch it again")
-
 puts "Finished!"
