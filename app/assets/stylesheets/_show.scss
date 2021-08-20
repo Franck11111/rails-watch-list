@@ -1,0 +1,15 @@
+.btn-red {
+  color: rgb(0, 0, 0);
+  background: linear-gradient(#fb1616, #c51010);
+  border: 1px solid #520000;
+  padding: 0px 20px;
+  margin-left: 20px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-red:hover {
+  opacity: 1;
+}

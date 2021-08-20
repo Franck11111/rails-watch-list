@@ -1,14 +1,14 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @list.photo.attached? ? cl_image_path(list.photo.key) : asset_path('list_background.png') %>);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : asset_path('list_background.png') %>);">
   <div class="container">
     <h1><%= @list.name %></h1>
   </div>
 </div>
 <br>
 <div class="buttons d-flex float-left pl-200">
-  <div class="button ml-100">
+  <div class="button">
     <%= link_to 'Back to my lists', lists_path, class: "btn btn-ghost" %>
   </div>
-  <div class="button ml-100">
+  <div class="button">
     <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: "btn btn-gradient" %>
   </div>
 </div>
@@ -18,5 +18,5 @@
 <% @list.bookmarks.each do |bookmark| %>
   <strong><%= bookmark.movie.title %></strong> |
   <%= bookmark.comment %>
-  <%= link_to "  Delete", bookmark_path(bookmark), method: :delete, data: {confirm: "Are you sure?"} %><br>
+  <%= link_to 'Delete comment', bookmark_path(bookmark), class: "btn btn-red", method: :delete, data: {confirm: "Are you sure?"} %>
 <% end %>
