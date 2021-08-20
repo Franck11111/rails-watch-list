@@ -1,9 +1,15 @@
 <p>
   <strong><%= @list.name %></strong>
 </p>
-<%= link_to 'My lists', lists_path %> |
 
-<%= link_to 'Add a movie', new_list_bookmark_path(@list) %>
+<div class="buttons d-flex float-left pl-200">
+  <div class="button ml-100">
+    <%= link_to 'Back to my lists', lists_path, class: "btn btn-ghost" %>
+  </div>
+  <div class="button ml-100">
+    <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: "btn btn-gradient" %>
+  </div>
+</div>
 
 <br><br>
 

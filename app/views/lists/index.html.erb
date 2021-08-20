@@ -1,17 +1,18 @@
-<h1>My lists</h1>
-
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('banner.png') %>);">
+  <div class="container">
+    <h1>My movie lists</h1>
+  </div>
+</div>
 <br>
-
-<table>
-  <tbody>
-    <% @lists.each do |list| %>
-      <tr>
-        <td><strong><%= link_to list.name, list_path(list)%></strong></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="button ml-100">
+  <%= link_to 'Add a new list', new_list_path, class: "btn btn-gradient" %>
+</div>
 <br>
-
-<%= link_to 'Add a new list', new_list_path %>
+<div class="cards d-flex justify-content-center">
+  <% @lists.each do |list| %>
+    <div class="card-category mx-2 text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : asset_path('list_background.png') %>)">
+      <strong><%= link_to list.name, list_path(list) %></strong>
+    </div>
+  <% end %>
+</div>
+<br>
